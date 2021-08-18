@@ -1,24 +1,31 @@
-var iteams = [
-                [9,6,0,0,0,0,4,0,0],
-                [1,8,5,4,2,0,0,0,0],
-                [0,0,0,0,0,1,9,0,8],
-                [5,3,0,9,8,0,6,0,0],
-                [0,4,9,0,0,0,0,0,1],
-                [8,2,7,0,0,0,0,4,9],
-                [7,5,0,1,0,6,0,8,0],
-                [0,0,6,8,3,0,0,5,0],
-                [0,1,8,7,0,0,3,0,6],
-            ];
-solve(iteams)
-console.log(iteams)
+var iteams = [];
 
+for(let g = 0;g<9;g++){
+    iteams[g] = [];
+}
+
+function act(){
+    for(let a=0;a<9;a++){
+        for(let b=0;b<9;b++){
+            let inp = document.getElementById(a+""+b).value;
+            if(inp == ""){
+                iteams[a][b] = 0
+            }
+            else{
+                iteams[a][b] = parseInt(inp)
+            }
+        }
+    }
+    console.log(iteams)
+solve(iteams)
+}
+    
 function isValid(iteams,row,col,c){
     for(let i=0;i<9;i++){
         const m = 3 * Math.floor(row / 3) + Math.floor(i / 3);
         const n = 3 * Math.floor(col / 3) + i % 3;
         if (iteams[row][i] == c || iteams[i][col] == c || iteams[m][n] == c)
         return false
-        
     }
     return true;
 }
