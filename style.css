@@ -1,53 +1,49 @@
-var iteams = [];
+/* font-family: 'Tourney', cursive; */
 
-for(let g = 0;g<9;g++){
-    iteams[g] = [];
+.header{
+    font-family: 'Tourney', cursive;
+    font-size: larger;
+    text-align: center;
+    color: rgb(204, 8, 8);
+}
+.sudoku-block{
+    margin: auto;
+    width: 440px;
+    padding: 1%;
+}
+table {
+    border: 2px solid black;
+    display: inline-block;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+tr:first-child td {
+	border-top-color: black;
+}
+tr:nth-child(3n) td {
+	border-bottom-color: black;
+}
+td {
+	border: 1px solid lightgrey;
+	height: 40px;
+	width: 40px;
 }
 
-function act(){
-    for(let a=0;a<9;a++){
-        for(let b=0;b<9;b++){
-            let inp = document.getElementById(a+""+b).value;
-            if(inp == ""){
-                iteams[a][b] = 0
-            }
-            else{
-                iteams[a][b] = parseInt(inp)
-            }
-        }
-    }
-    console.log(iteams)
-solve(iteams)
+td:first-child {
+	border-left-color: black;
 }
-    
-function isValid(iteams,row,col,c){
-    for(let i=0;i<9;i++){
-        const m = 3 * Math.floor(row / 3) + Math.floor(i / 3);
-        const n = 3 * Math.floor(col / 3) + i % 3;
-        if (iteams[row][i] == c || iteams[i][col] == c || iteams[m][n] == c)
-        return false
-    }
-    return true;
+td:nth-child(3n) {
+	border-right-color: black;
 }
-function solve(iteams)
-{
-    for(var i = 0 ;i<9;i++){
-        for(var j =0;j<9;j++){
-            if(iteams[i][j] == 0){
-                for(let c=1;c<=9;c++){
-                    if(isValid(iteams,i,j,c)){
-                        iteams[i][j] =c;
-                        if(solve(iteams)==true){
-                            return true
-                        }
-                        else{
-                            iteams[i][j]=0;
-                        }
-                    }
-                }
-                return false
-            }
-        }
-    }
-    return true
+
+input {
+	padding: 0;
+	text-align: center;
+	border: 0;
+	height: 40px;
+	width: 40px;
+	text-align: center;
+}
+input:hover {
+	background: #eee;
 }
