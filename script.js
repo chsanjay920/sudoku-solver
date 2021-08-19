@@ -1,10 +1,11 @@
 var iteams = [];
 var flag = 0
 
+//initialize 2dimension array with  
 for(let g = 0;g<9;g++){
     iteams[g] = [];
 }
-
+//get inputed date into the js variable
 function getInput(){
     for(let a=0;a<9;a++){
         for(let b=0;b<9;b++){
@@ -17,7 +18,6 @@ function getInput(){
             }
         }
     }
-    // console.log(iteams)
     solve(iteams)
 }
     
