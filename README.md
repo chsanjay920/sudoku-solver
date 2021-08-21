@@ -1,4 +1,5 @@
 # sudoku-solver
 solving sudoku puzzle using backtracking algorithm . 
-## demo link
-sudoku-solver-by-sanjay.vercel.app
+## About The Project
+
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
