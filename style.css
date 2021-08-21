@@ -1,59 +1,121 @@
 /* font-family: 'Tourney', cursive; */
 
-.header{
-    font-family: 'Tourney', cursive;
-    font-size: larger;
-    text-align: center;
-    color: rgb(204, 8, 8);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+*, *::after, *::before {
+  box-sizing: border-box;
 }
-.sudoku-block{
-    margin: auto;
-    width: 440px;
-    padding: 1%;
-}
-.sudoku-block button{
-	margin-top: 20px;
-	margin-left: 150px;
-	height: 50px;
+
+body {
+	background: rgb(77, 77, 77);
+background: radial-gradient(circle, rgb(39, 39, 39) 6%, rgba(56,55,52,1) 81%, rgba(47,47,47,1) 100%);}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 90vh;
+	width: 100vw;
 	text-align: center;
-	color: rgb(136, 43, 43);
-	background-color: rgb(252, 223, 188);
-	box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;;
+  }
+.header {
+  font-family: "Tourney", cursive;
+  font-size: larger;
+  text-align: center;
+  color: rgb(164, 244, 255);
 }
+.sudoku-block {
+  margin: auto;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+}
+
 table {
-    border: 3px solid black;
-    display: inline-block;
-    margin: 10px;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  border: 3px solid rgb(180, 174, 174);
+  display: inline-block;
+  margin: 10px;
+  box-shadow: rgba(102, 235, 235, 0.3) 0px 19px 38px,
+    rgba(0, 238, 255, 0.22) 0px 15px 12px;
 }
 tr:first-child td {
-	border-top-color: black;
+  border-top-color: rgb(255, 255, 255);
 }
 tr:nth-child(3n) td {
-	border-bottom-color: black;
+  border-bottom-color: rgb(253, 253, 253);
 }
 td {
-	border: 1px solid lightgrey;
-	height: 40px;
-	width: 40px;
+  border: 1px solid rgb(133, 133, 133);
+  height: 40px;
+  width: 40px;
 }
 
 td:first-child {
-	border-left-color: black;
+  border-left-color: rgb(252, 252, 252);
 }
 td:nth-child(3n) {
-	border-right-color: black;
+  border-right-color: rgb(248, 248, 248);
 }
 
 input {
-	padding: 0;
-	text-align: center;
-	font-size: larger;
-	border: 0;
-	height: 50px;
-	width: 50px;
-	text-align: center;
+background: scroll;
+  padding: 0;
+  text-align: center;
+  font-size: larger;
+  font:bolder;
+  border: 0;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  color: rgb(255, 230, 5);
 }
 input:hover {
-	background: #eee;
+  background: rgb(117, 111, 111);
+  columns: rgb(0, 0, 0);
+}
+button {
+	width: 14rem;
+	height: 3rem;
+	font-size: 1em;
+	background: #b3dcf8;
+	color: rgb(56, 56, 56);
+	border: 0.25rem solid #132e3f;
+	border-radius: 2.5rem;
+	padding: 10px 10px;
+	margin: 1rem;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+  }
+  button:hover {
+	color: #2d3031;
+  }
+  button::after {
+	content: "";
+	background: #727779;
+	color: rgb(255, 255, 255);
+	position: absolute;
+	z-index: -1;
+	padding: 0.85em 0.75em;
+	display: block;
+  }
+  button[class^="slide"]::after {
+	transition: all 0.35s;
+  }
+  button[class^="slide"]:hover::after {
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	transition: all 0.35s;
+  }
+  button.slide_from_left::after {
+	top: 0;
+	bottom: 0;
+	left: -100%;
+	right: 100%;
+  }
+
+
+.buttons-container{
+	display: flex;
 }

@@ -20,7 +20,9 @@ function getInput(){
     }
     solve(iteams)
 }
-    
+function refresh(){
+    location.reload();
+}
 function isValid(iteams,row,col,c){
     for(let i=0;i<9;i++){
         const m = 3 * Math.floor(row / 3) + Math.floor(i / 3);
@@ -40,8 +42,8 @@ function solve(iteams)
                     if(isValid(iteams,i,j,c)){
                         iteams[i][j] =c;
                         document.getElementById(i+""+j).value = iteams[i][j]; // passing values to the document
-                        document.getElementById(i+""+j).style.color = "#ff0000";//changing colour
-                        if(flag > 72900){
+                        document.getElementById(i+""+j).style.color = "pink";//changing colour
+                        if(flag > 7290){
                             window.alert("Invalid input provided")
                             return true
                         }
