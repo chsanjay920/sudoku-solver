@@ -8,7 +8,7 @@ coded this project in java-script and with some HTML and deployed it as a simple
 
 ## Screen shot:
 
-![screenshot](./images/screenshot.png)
+![screenshot](./images/Screenshot.png)
 
 
 ## Contributing
