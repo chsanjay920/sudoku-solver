@@ -1,27 +1,55 @@
-/* font-family: 'Tourney', cursive; */
 
-@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+
 *, *::after, *::before {
   box-sizing: border-box;
 }
+html body {
+  width: 100%;
+  height: 100%;
+}
 
 body {
-	background: rgb(77, 77, 77);
-background: radial-gradient(circle, rgb(39, 39, 39) 6%, rgba(56,55,52,1) 81%, rgba(47,47,47,1) 100%);}
+  margin: 0;
+  padding: 0;
+  background: #F5F4F4;
+  color: #67575D;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 18px;
+  line-height: 1.3;
+}
+p{
+  font-family: 'Caveat', cursive;
+  font-size: 240%;
+}
+.background-container {
+  position: fixed;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to bottom, #f4b261 0%, #f1685f 100%);
+  z-index: -1;
+  text-align: center;
+}
 
 .container {
+  border: 3px solid #132e3f;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	height: 90vh;
-	width: 100vw;
 	text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 517px;
+  height: 515px;
+  background: #faeaea;
+  box-shadow: 0px 10px 15px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
   }
 .header {
-  font-family: "Tourney", cursive;
   font-size: larger;
   text-align: center;
-  color: rgb(164, 244, 255);
+  color: rgb(0, 0, 0);
 }
 .sudoku-block {
   margin: auto;
@@ -33,27 +61,24 @@ background: radial-gradient(circle, rgb(39, 39, 39) 6%, rgba(56,55,52,1) 81%, rg
 table {
   border: 3px solid rgb(180, 174, 174);
   display: inline-block;
-  margin: 10px;
-  box-shadow: rgba(102, 235, 235, 0.3) 0px 19px 38px,
-    rgba(0, 238, 255, 0.22) 0px 15px 12px;
 }
 tr:first-child td {
   border-top-color: rgb(255, 255, 255);
 }
 tr:nth-child(3n) td {
-  border-bottom-color: rgb(253, 253, 253);
+  border-bottom-color: rgb(0, 0, 0);
 }
 td {
-  border: 1px solid rgb(133, 133, 133);
+  border: 1px solid rgb(170, 170, 170);
   height: 40px;
   width: 40px;
 }
 
 td:first-child {
-  border-left-color: rgb(252, 252, 252);
+  border-left-color: rgb(255, 255, 255);
 }
 td:nth-child(3n) {
-  border-right-color: rgb(248, 248, 248);
+  border-right-color: rgb(0, 0, 0);
 }
 
 input {
@@ -66,19 +91,19 @@ background: scroll;
   height: 50px;
   width: 50px;
   text-align: center;
-  color: rgb(255, 230, 5);
+  color: rgba(255, 13, 13, 0.658);
 }
 input:hover {
-  background: rgb(117, 111, 111);
+  background: rgba(255, 145, 71, 0.87);
   columns: rgb(0, 0, 0);
 }
 button {
 	width: 14rem;
 	height: 3rem;
 	font-size: 1em;
-	background: #b3dcf8;
-	color: rgb(56, 56, 56);
-	border: 0.25rem solid #132e3f;
+	background: hsla(51, 100%, 51%, 0.637);
+	color: rgb(0, 0, 0);
+	border: 0.15rem solid #000000;
 	border-radius: 2.5rem;
 	padding: 10px 10px;
 	margin: 1rem;
@@ -87,11 +112,11 @@ button {
 	overflow: hidden;
   }
   button:hover {
-	color: #2d3031;
+	color: #000000;
   }
   button::after {
 	content: "";
-	background: #727779;
+	background: #f78604;
 	color: rgb(255, 255, 255);
 	position: absolute;
 	z-index: -1;
@@ -118,4 +143,9 @@ button {
 
 .buttons-container{
 	display: flex;
+}
+@media screen and (max-width: 800px) {
+  .p{
+    color: #F5F4F4;
+  }
 }
