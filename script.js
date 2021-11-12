@@ -42,7 +42,7 @@ function solve(iteams)
                     if(isValid(iteams,i,j,c)){
                         iteams[i][j] =c;
                         document.getElementById(i+""+j).value = iteams[i][j]; // passing values to the document
-                        document.getElementById(i+""+j).style.color = "pink";//changing colour
+                        document.getElementById(i+""+j).style.color = "black";//changing colour
                         if(flag > 7290){
                             window.alert("Invalid input provided")
                             return true
