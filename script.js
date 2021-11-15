@@ -32,34 +32,39 @@ function isValid(iteams,row,col,c){
     }
     return true;
 }
+function sleep (time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
 function solve(iteams)
 {
     flag = flag+1
     for(var i = 0 ;i<9;i++){
-        for(var j =0;j<9;j++){
-            if(iteams[i][j] == 0){
-                for(let c=1;c<=9;c++){
-                    if(isValid(iteams,i,j,c)){
-                        iteams[i][j] =c;
-                        document.getElementById(i+""+j).value = iteams[i][j]; // passing values to the document
-                        document.getElementById(i+""+j).style.color = "black";//changing colour
-                        if(flag > 7290){
-                            window.alert("Invalid input provided")
-                            return true
+        sleep(500).then(() => {
+                for(var j =0;j<9;j++){
+                    if(iteams[i][j] == 0){
+                        for(let c=1;c<=9;c++){
+                            if(isValid(iteams,i,j,c)){
+                                iteams[i][j] =c;
+                                document.getElementById(i+""+j).value = iteams[i][j]; // passing values to the document
+                                document.getElementById(i+""+j).style.color = "black";//changing colour
+                                if(flag > 7290){
+                                    window.alert("Invalid input provided")
+                                    return true
+                                }
+                                // if recursion goes on to the infinity
+                                // the above condition break the recursion 
+                                if(solve(iteams)==true){
+                                    return true
+                                }
+                                else{
+                                    iteams[i][j]=0;
+                                }
+                            }
                         }
-                        // if recursion goes on to the infinity
-                        // the above condition break the recursion 
-                        if(solve(iteams)==true){
-                            return true
-                        }
-                        else{
-                            iteams[i][j]=0;
-                        }
+                        return false
                     }
                 }
-                return false
-            }
-        }
+        });
     }
     return true
 }
