@@ -32,13 +32,15 @@ function isValid(iteams,row,col,c){
     }
     return true;
 }
-function sleep (time) {
-  return new Promise((resolve) => setTimeout(resolve, time));
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
-function solve(iteams)
+async function solve(iteams)
 {
     flag = flag+1
     for(var i = 0 ;i<9;i++){
+        await sleep(2000);
                 for(var j =0;j<9;j++){
                     if(iteams[i][j] == 0){
                         for(let c=1;c<=9;c++){
