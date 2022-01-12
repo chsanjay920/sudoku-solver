@@ -11,7 +11,7 @@ coded this project in java-script and with some HTML and deployed it as a simple
 <!-- ![screenshot](./images/Screenshot.png) -->
 <a href="https://sudoku-solver-by-sanjay.vercel.app">
 <p align="center">
-  <img src="./images/Screenshot.png" alt="screenshot" width="500px" >
+  <img src="./images/Screenshot 2022-01-12 071322.png" alt="screenshot" width="500px" >
 </p>
 </a>
 
