@@ -1,9 +1,7 @@
-
-
-
 *, *::after, *::before {
   box-sizing: border-box;
 }
+
 html body {
   width: 100%;
   height: 100%;
@@ -18,6 +16,7 @@ body {
   font-size: 18px;
   line-height: 1.3;
 }
+
 p{
   font-family: 'Caveat', cursive;
   font-size: 240%;
@@ -40,12 +39,12 @@ p{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 517px;
-  height: 515px;
+  width: 60%;
   background: #faeaea;
   box-shadow: 0px 10px 15px 5px rgba(0, 0, 0, 0.1);
   display: flex;
-  }
+}
+
 .header {
   font-size: larger;
   text-align: center;
@@ -57,9 +56,8 @@ p{
   display: flex;
   justify-content: center;
 }
-
 table {
-  border: 3px solid rgb(180, 174, 174);
+  border: 3px solid rgb(85, 82, 82);
   display: inline-block;
 }
 tr:first-child td {
@@ -73,14 +71,12 @@ td {
   height: 40px;
   width: 40px;
 }
-
 td:first-child {
   border-left-color: rgb(255, 255, 255);
 }
 td:nth-child(3n) {
   border-right-color: rgb(0, 0, 0);
 }
-
 input {
 background: scroll;
   padding: 0;
@@ -89,39 +85,42 @@ background: scroll;
   font:bolder;
   border: 0;
   height: 50px;
-  width: 50px;
+  width: 55px;
   text-align: center;
-  color: rgba(255, 13, 13, 0.658);
+  color: red;
 }
 input:hover {
   background: rgba(255, 145, 71, 0.87);
   columns: rgb(0, 0, 0);
 }
 button {
-	width: 14rem;
+	width: 7rem;
 	height: 3rem;
-	font-size: 1em;
+	font-size: .9rem;
 	background: hsla(51, 100%, 51%, 0.637);
 	color: rgb(0, 0, 0);
 	border: 0.15rem solid #000000;
-	border-radius: 2.5rem;
+	border-radius: .5rem;
 	padding: 10px 10px;
-	margin: 1rem;
+	margin: .5rem;
 	position: relative;
-	z-index: 1;
 	overflow: hidden;
-  }
-  button:hover {
+}
+button:hover {
 	color: #000000;
 	background : Orange;
-  }
- 
-
+}
 .buttons-container{
 	display: flex;
+  margin: .5rem;
 }
-@media screen and (max-width: 800px) {
-  .p{
-    color: #F5F4F4;
-  }
+.radiobuttons input{
+  height:20%;
+}
+.radiobuttons{
+  text-align: left;
+}
+
+#sudoku{
+  margin-bottom: 3rem;
 }

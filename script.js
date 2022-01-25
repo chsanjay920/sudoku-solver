@@ -10,7 +10,7 @@ function getInput(){
     for(let a=0;a<9;a++){
         for(let b=0;b<9;b++){
             let inp = document.getElementById(a+""+b).value;
-            if(inp == ""){
+            if(inp == "" || inp == " "){
                 iteams[a][b] = 0
             }
             else{
@@ -63,3 +63,170 @@ function solve(iteams)
     }
     return true
 }
+function randomIntFromInterval(min, max) 
+{ 
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+function removeElement(arr,val)
+{
+    const index = arr.indexOf(val);
+    if (index > -1) 
+    {
+        arr.splice(index, 1);
+    }
+    return arr;
+}
+function generate()
+{
+    var level = document.querySelector('input[name="level"]:checked');
+    if(level == null){
+        window.alert("choose level");
+        return;
+    }
+    console.log(level.value);
+    if(level.value == "hard")
+    {
+        var NOfCells = randomIntFromInterval(40,60);
+    }
+    else if( level.value == "medium")
+    {
+        var NOfCells = randomIntFromInterval(20,30);
+    }
+    else{
+        var NOfCells = 19;
+    }
+    for(var i=0;i<3;i++)
+    {
+        var dig = [1,2,3,4,5,6,7,8,9];
+        for(var a=0;a<3;a++)
+        {
+            for(var b=0;b<3;b++)
+            {
+                var val = Math.floor(Math.random() * dig.length);
+                document.getElementById((a+3*i)+""+(b+3*i)).value = dig[val];
+                dig = removeElement(dig,dig[val]);
+            }
+        }
+    }
+    document.getElementById("sudoku").style.color = "red";
+    getInput();
+    removeRandomElements(NOfCells);
+}
+
+function removeRandomElements(n)
+{
+    var ar = ['00', '01', '02', '03', '04', '05', '06', '07', '08', '10', '11', '12', '13', '14', '15', '16', '17', '18', '20', '21', '22', '23', '24', '25', '26', '27', '28', '30', '31', '32', '33', '34', '35', '36', '37', '38', '40', '41', '42', '43', '44', '45', '46', '47', '48', '50', '51', '52', '53', '54', '55', '56', '57', '58', '60', '61', '62', '63', '64', '65', '66', '67', '68', '70', '71', '72', '73', '74', '75', '76', '77', '78', '80', '81', '82', '83', '84', '85', '86', '87', '88'];
+    for(var i=0;i<n;i++)
+    {
+        var k =ar[Math.floor(Math.random()*ar.length)];
+        console.log(k)
+        document.getElementById(k).value = " ";
+    }
+    for(var i=0;i<9;i++)
+    {
+        for(var j=0;j<9;j++)
+        {
+            document.getElementById(i+""+j).style.color = "red";   
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+//generating random sudoku version:1 (failed testcases)
+    // for(var i=0;i<3;i++)
+    // {
+    //     for(var a=0;a<3;a++)
+    //     {   
+    //         var dig = [1,2,3,4,5,6,7,8,9];
+    //         for(var b=0;b<3;b++)
+    //         {
+    //             var NOofDig = randomIntFromInterval(0,3);
+    //             console.log("number of dig in row = "+NOofDig);
+    //             var array3 = [0+a*3,1+a*3,2+a*3];
+    //             for(var k=0;k<NOofDig;k++)
+    //             {
+    //                 getInput2();
+    //                 var val = Math.floor(Math.random() * dig.length);
+    //                 var v = Math.floor(Math.random()*array3.length);
+    //                 var p = array3[v];
+    //                 if(isValid(iteams,(b+i*3),p,dig[val]))
+    //                 {
+    //                     array3 = removeElement(array3,p);
+    //                     document.getElementById((b+i*3)+""+p).value = dig[val];
+    //                     document.getElementById((b+i*3)+""+p).style.color = "red";
+    //                     dig = removeElement(dig,dig[val]);
+    //                 }
+    //                 //initialize 2D array to 0
+    //                 for(let g = 0;g<9;g++){
+    //                     iteams[g] = [];
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+
+
+    // generating random sudoku version:2 (failed testcases)
+//     for(var i=0;i<3;i++)
+//     {
+//         for(var a=0;a<3;a++)
+//         {   
+//             var dig = [1,2,3,4,5,6,7,8,9];
+//             for(var b=0;b<3;b++)
+//             {
+//                 // var NOofDig = randomIntFromInterval(0,3);
+//                 // console.log("number of dig in row = "+NOofDig);
+//                 var array3 = [0+a*3,1+a*3,2+a*3];
+//                 for(var k=0;k<3;k++)
+//                 {
+//                     getInput2();
+//                     var val = Math.floor(Math.random() * dig.length);
+//                     var v = Math.floor(Math.random()*array3.length);
+//                     var p = array3[v];
+//                     if(isValid(iteams,(b+i*3),p,dig[val]))
+//                     {
+//                         array3 = removeElement(array3,p);
+//                         document.getElementById((b+i*3)+""+p).value = dig[val];
+//                         document.getElementById((b+i*3)+""+p).style.color = "red";
+//                         dig = removeElement(dig,dig[val]);
+//                     }
+//                     //initialize 2D array to 0
+                    
+//                 }
+//             }
+//         }
+//     }
+// // }
+// // generate();
+// for(let g = 0;g<9;g++){
+//     iteams[g] = [];
+// }
+
+
+
+// function isfull()
+// {
+//     var flag = 0;
+//     for(var i=0;i<9;i++)
+//     {
+//         for(var j=0;j<9;j++)
+//         {
+//             if(iteams[i][j] == 0)
+//             flag = 1;
+//         }
+//     }
+//     if(flag == 1)
+//     return false;
+//     return true;
+// }
+
