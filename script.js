@@ -121,7 +121,7 @@ function removeRandomElements(n)
     {
         var k =ar[Math.floor(Math.random()*ar.length)];
         console.log(k)
-        document.getElementById(k).value = " ";
+        document.getElementById(k).value = "";
     }
     for(var i=0;i<9;i++)
     {

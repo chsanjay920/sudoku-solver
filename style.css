@@ -87,7 +87,7 @@ background: scroll;
   height: 50px;
   width: 55px;
   text-align: center;
-  color: red;
+  color: rgb(0, 76, 255);
 }
 input:hover {
   background: rgba(255, 145, 71, 0.87);
