@@ -1,0 +1,88 @@
+//generating random sudoku version:1 (failed testcases)
+    // for(var i=0;i<3;i++)
+    // {
+    //     for(var a=0;a<3;a++)
+    //     {   
+    //         var dig = [1,2,3,4,5,6,7,8,9];
+    //         for(var b=0;b<3;b++)
+    //         {
+    //             var NOofDig = randomIntFromInterval(0,3);
+    //             console.log("number of dig in row = "+NOofDig);
+    //             var array3 = [0+a*3,1+a*3,2+a*3];
+    //             for(var k=0;k<NOofDig;k++)
+    //             {
+    //                 getInput2();
+    //                 var val = Math.floor(Math.random() * dig.length);
+    //                 var v = Math.floor(Math.random()*array3.length);
+    //                 var p = array3[v];
+    //                 if(isValid(iteams,(b+i*3),p,dig[val]))
+    //                 {
+    //                     array3 = removeElement(array3,p);
+    //                     document.getElementById((b+i*3)+""+p).value = dig[val];
+    //                     document.getElementById((b+i*3)+""+p).style.color = "red";
+    //                     dig = removeElement(dig,dig[val]);
+    //                 }
+    //                 //initialize 2D array to 0
+    //                 for(let g = 0;g<9;g++){
+    //                     iteams[g] = [];
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+
+
+    // generating random sudoku version:2 (failed testcases)
+//     for(var i=0;i<3;i++)
+//     {
+//         for(var a=0;a<3;a++)
+//         {   
+//             var dig = [1,2,3,4,5,6,7,8,9];
+//             for(var b=0;b<3;b++)
+//             {
+//                 // var NOofDig = randomIntFromInterval(0,3);
+//                 // console.log("number of dig in row = "+NOofDig);
+//                 var array3 = [0+a*3,1+a*3,2+a*3];
+//                 for(var k=0;k<3;k++)
+//                 {
+//                     getInput2();
+//                     var val = Math.floor(Math.random() * dig.length);
+//                     var v = Math.floor(Math.random()*array3.length);
+//                     var p = array3[v];
+//                     if(isValid(iteams,(b+i*3),p,dig[val]))
+//                     {
+//                         array3 = removeElement(array3,p);
+//                         document.getElementById((b+i*3)+""+p).value = dig[val];
+//                         document.getElementById((b+i*3)+""+p).style.color = "red";
+//                         dig = removeElement(dig,dig[val]);
+//                     }
+//                     //initialize 2D array to 0
+                    
+//                 }
+//             }
+//         }
+//     }
+// // }
+// // generate();
+// for(let g = 0;g<9;g++){
+//     iteams[g] = [];
+// }
+
+
+
+// function isfull()
+// {
+//     var flag = 0;
+//     for(var i=0;i<9;i++)
+//     {
+//         for(var j=0;j<9;j++)
+//         {
+//             if(iteams[i][j] == 0)
+//             flag = 1;
+//         }
+//     }
+//     if(flag == 1)
+//     return false;
+//     return true;
+// }
+
